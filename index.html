@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Servicios de tecnología sencillos y accesibles para pequeños negocios.">
+  <title>Solutek | Servicios de TI</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Solutek, inicio">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <span>Solutek<span class="brand-dot">.</span></span>
+    </a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#servicios">Servicios</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="#cotizacion">Cotización</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="nav-cta" href="#cotizacion">Pedir cotización</a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> Tecnología para pequeños negocios</p>
+        <h1>Tu negocio funciona mejor cuando la tecnología también.</h1>
+        <p class="hero-text">Te ayudamos a cuidar tu información, usar la nube y resolver problemas con tus equipos. Sin explicaciones complicadas.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#servicios">Conocer servicios <span aria-hidden="true">→</span></a>
+          <a class="button button-quiet" href="nosotros.html">Conócenos</a>
+        </div>
+        <div class="hero-note"><span class="note-check">✓</span> Soluciones prácticas y atención cercana</div>
+      </div>
+      <div class="hero-art" aria-label="Ilustración de tecnología y seguridad" role="img">
+        <div class="art-glow"></div>
+        <div class="art-card card-back"><span class="mini-label">SOLUTEK / TI</span><div class="art-lines"><i></i><i></i><i></i></div></div>
+        <div class="art-card card-main">
+          <div class="shield"><span>✓</span></div>
+          <p class="art-title">Todo en orden</p>
+          <p class="art-subtitle">Tus equipos y datos, mejor cuidados.</p>
+          <div class="status-row"><span class="status-dot"></span> Protección activa</div>
+        </div>
+        <div class="floating-cloud"><span>☁</span></div>
+        <div class="floating-lock">⌑</div>
+      </div>
+    </section>
+
+    <section class="section services-section" id="servicios">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Servicios y productos de TI</p>
+          <h2>Soluciones prácticas para cuidar tu negocio</h2>
+        </div>
+        <p class="section-intro">Ofrecemos apoyo tecnológico en las áreas que más necesitan los negocios hoy en día.</p>
+      </div>
+      <div class="service-grid" id="catalogo"></div>
+      <div class="service-notice" id="serviceNotice" role="status" aria-live="polite" aria-atomic="true" hidden>
+        <span class="notice-check" aria-hidden="true">✓</span>
+        <span id="serviceNoticeText"></span>
+        <a href="#cotizacion">Ver cotización <span aria-hidden="true">→</span></a>
+        <button type="button" id="closeServiceNotice" aria-label="Cerrar confirmación">×</button>
+      </div>
+    </section>
+
+    <section class="about-section" id="nosotros">
+      <div class="about-symbol">S<span>.</span></div>
+      <div class="about-copy">
+        <p class="eyebrow">Sobre Solutek</p>
+        <h2>La tecnología no tiene por qué ser complicada.</h2>
+        <p>Somos una propuesta de servicios de TI enfocada en ayudar a pequeños negocios con sus necesidades tecnológicas. Buscamos explicar las cosas de forma clara y ofrecer soluciones que realmente les sirvan.</p>
+        <div class="about-points">
+          <span><b>✓</b> Atención sencilla</span>
+          <span><b>✓</b> Soluciones prácticas</span>
+          <span><b>✓</b> Costos claros</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section quote-section" id="cotizacion">
+      <div class="quote-heading">
+        <p class="eyebrow">Arma tu solicitud</p>
+        <h2>¿Qué servicio necesitas?</h2>
+        <p>Agrega los servicios que te interesan para solicitar una cotización. Precios sugeridos en MXN; el alcance final se confirma según el tamaño de tu empresa.</p>
+      </div>
+      <div class="quote-layout">
+        <div class="quote-catalog">
+          <div class="quote-list" id="quoteItems">
+            <p class="empty-message">Todavía no agregas servicios. Puedes elegir uno desde las tarjetas de arriba.</p>
+          </div>
+        </div>
+        <aside class="order-card">
+          <div class="order-top">
+            <span class="order-icon">▤</span>
+            <div><h3>Tu cotización</h3><p>Resumen de tu solicitud</p></div>
+          </div>
+          <div id="orderLines" class="order-lines"><p class="empty-order">Tu lista está vacía.</p></div>
+          <div class="totals">
+            <div><span>Subtotal</span><strong id="subtotal">$0.00</strong></div>
+            <div><span>IVA (16%)</span><strong id="iva">$0.00</strong></div>
+            <div class="total-row"><span>Total estimado</span><strong id="total">$0.00</strong></div>
+          </div>
+          <div class="billing-option">
+            <label class="billing-toggle"><input type="checkbox" id="requiereFactura"> Requiero factura</label>
+            <div id="billingFields" class="billing-fields" hidden>
+              <p>Datos fiscales para incluir en la solicitud:</p>
+              <label>Razón social o nombre fiscal<input id="billingName" type="text" autocomplete="organization" placeholder="Escríbelo como aparece en tu constancia"></label>
+               <label>RFC<input id="billingRfc" type="text" maxlength="13" autocomplete="tax-id" placeholder="12 o 13 caracteres"></label>
+              <label>Código postal fiscal<input id="billingZip" type="text" inputmode="numeric" maxlength="5" pattern="\d{5}" autocomplete="postal-code" placeholder="5 dígitos"></label>
+              <label>Clave de régimen fiscal<input id="billingRegime" type="text" inputmode="numeric" maxlength="3" pattern="\d{3}" placeholder="Ej. 601, 612 o 626"></label>
+              <label>Uso del CFDI<select id="billingUse"><option value="">Selecciona el uso</option><option>G03 · Gastos en general</option><option>G01 · Adquisición de mercancías</option><option>I04 · Equipo de cómputo y accesorios</option><option>S01 · Sin efectos fiscales</option><option>Otro · especificar en el mensaje</option></select></label>
+              <small>Captura los datos tal como aparecen en tu Constancia de Situación Fiscal. Se incluyen en el resumen de solicitud. Esta página aún no emite CFDI ni envía datos a un servidor.</small>
+            </div>
+          </div>
+          <button class="button button-primary button-full" id="btnCot" disabled>Solicitar cotización</button>
+          <button class="clear-button" id="btnVaciar" disabled>Vaciar selección</button>
+          <p class="order-disclaimer">Precios estimados antes de IVA. La solicitud no genera un cargo; confirma el alcance y el método de pago con Solutek.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contacto">
+      <div>
+        <p class="eyebrow">Hablemos</p>
+        <h2>¿Tienes alguna duda?</h2>
+        <p>Cuéntanos un poco sobre lo que necesitas y nos pondremos en contacto contigo.</p>
+      </div>
+      <form id="contactForm" class="contact-form">
+        <label>Tu nombre<input type="text" name="nombre" placeholder="Escribe tu nombre" required></label>
+        <label>Correo electrónico<input type="email" name="correo" placeholder="nombre@correo.com" required></label>
+        <label>¿En qué podemos ayudarte?<textarea name="mensaje" rows="3" placeholder="Cuéntanos qué necesitas..." required></textarea></label>
+        <button class="button button-primary" type="submit">Enviar solicitud <span aria-hidden="true">→</span></button>
+        <p class="form-message" id="formMessage" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer team-footer" id="contactos-equipo">
+    <a class="brand footer-brand" href="#inicio"><span class="brand-mark">S</span><span>Solutek<span class="brand-dot">.</span></span></a>
+    <p class="footer-project">Empresa ficticia · Equipo 1 · Estudiantes de LT I, FACPYA-UANL · Monterrey, Nuevo León, México</p>
+    <div class="footer-person"><strong>Jorge Antonio Gómez de la Cruz</strong><span>Director general y administrador</span><a href="tel:+528124211445">+52 81 2421 1445</a></div>
+    <div class="footer-person"><strong>Jazziry Guadalupe Cardona Medina</strong><span>Desarrolladora</span><a href="tel:+526941105764">+52 694 110 5764</a></div>
+    <div class="footer-person"><strong>Elian Jesús García Sánchez</strong><span>Desarrollador</span><a href="tel:+5281258737">+52 81258737</a></div>
+    <div class="footer-person"><strong>Iván Meléndez Méndez</strong><span>Desarrollador</span><a href="tel:+528119229626">+52 81 1922 9626</a></div>
+    <div class="footer-bottom"><span>Solutek Servicios TI · PIA · Precios en MXN</span><a href="nosotros.html">Conoce al equipo</a><a href="#inicio" class="back-top">Volver arriba ↑</a></div>
+  </footer>
+
+  <dialog id="modalDoc" class="quote-dialog">
+    <div class="dialog-header">
+      <div><p class="eyebrow">Solutek Servicios TI</p><h2>Tu cotización</h2></div>
+      <button class="icon-button" id="cerrarDoc" aria-label="Cerrar">×</button>
+    </div>
+    <div id="doc" class="document-content"></div>
+    <div class="dialog-actions">
+      <button class="button button-quiet" id="cerrarDoc2">Cerrar</button>
+      <button class="button button-primary" id="imprimir">Imprimir o guardar PDF</button>
+      <button class="button button-primary" id="continuarSolicitud">Continuar solicitud</button>
+    </div>
+  </dialog>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
